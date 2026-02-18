@@ -1,17 +1,51 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home | Personal Archive">
+  <h1>Home</h1>
+
+  <section class="card">
+    <p><strong>Thinking in public. One small delta at a time.</strong></p>
+    <p>This site is a log of how my thinking evolves.</p>
+
+    <p>
+      I write here to turn vague intuitions into explicit models-about
+      technology, systems, decision-making, and the world around them. Most
+      posts are short. Many are unfinished. Some will be wrong.
+    </p>
+    <p>That's intentional.</p>
+  </section>
+
+  <section>
+    <h2>You'll find:</h2>
+    <p>
+      <a class="inline-link" href="/delta">1% Delta</a>
+      - dated notes where I try to get slightly clearer than yesterday
+    </p>
+    <p>
+      <a class="inline-link" href="/notes">Notes</a>
+      - fragments, half-formed ideas, and things I don't yet understand
+    </p>
+  </section>
+
+  <section class="card">
+    <p>Nothing here is optimized for polish or reach.</p>
+    <p>Everything here is optimized for clarity and learning.</p>
+    <p>Read it as a time series, not a manifesto.</p>
+  </section>
+
+  <section>
+    <h2>How to use this site</h2>
+    <p>Start anywhere. Follow the dates. Watch ideas change.</p>
+    <p>If something feels incomplete, it probably is. That's part of the process.</p>
+  </section>
+
+  <section>
+    <h2>A small rule</h2>
+    <p>
+      I don't edit old posts to look smarter in hindsight. If I change my mind,
+      I write a new one.
+    </p>
+  </section>
+</BaseLayout>

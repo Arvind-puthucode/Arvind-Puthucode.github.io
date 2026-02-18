@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { notes } from "../data/notes";
+
+const entries = [...notes].sort(
+  (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+);
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout title="Notes | Personal Archive">
+  <h1>Notes (Fragments)</h1>
+  <p class="meta">Messy. Incomplete. Allowed to be wrong.</p>
+
+  <section class="list">
+    {entries.map((entry) => (
+      <article class="card">
+        <p class="meta">{dateFormatter.format(new Date(entry.date))}</p>
+        <h2>
+          <a class="inline-link" href={`/notes/${entry.slug}`}>
+            {entry.title}
+          </a>
+        </h2>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

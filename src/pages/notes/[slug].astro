@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { notes } from "../../data/notes";
+import { readFile } from "node:fs/promises";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
+import rehypePrettyCode from "rehype-pretty-code";
+import { visit } from "unist-util-visit";
+
+export async function getStaticPaths() {
+  return notes.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const filePath = new URL(`../../../public${entry.file}`, import.meta.url);
+const rawContent = await readFile(filePath, "utf-8");
+
+const lines = rawContent.split("\n");
+let title = entry.title;
+let bodyLines = lines;
+
+if (lines[0]?.startsWith("# ")) {
+  title = lines[0].slice(2).trim() || title;
+  bodyLines = lines.slice(1);
+  if (bodyLines[0] === "") {
+    bodyLines = bodyLines.slice(1);
+  }
+}
+
+const content = bodyLines.join("\n");
+
+const escapeHtml = (value) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+const remarkMermaid = () => (tree) => {
+  visit(tree, "code", (node, index, parent) => {
+    const lang = (node.lang || "").trim().toLowerCase();
+    if (lang !== "mermaid" || !parent || typeof index !== "number") return;
+
+    parent.children[index] = {
+      type: "html",
+      value: `<div class=\"mermaid\">${escapeHtml(node.value)}</div>`,
+    };
+  });
+};
+
+const html = String(
+  await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkMermaid)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypePrettyCode, {
+      theme: "min-light",
+      keepBackground: false,
+    })
+    .use(rehypeStringify)
+    .process(content)
+);
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout title={`${title} | Notes`}>
+  <h1>{title}</h1>
+  <p class="meta">{dateFormatter.format(new Date(entry.date))}</p>
+  <section class="card">
+    <div class="markdown" set:html={html} />
+  </section>
+  <script type="module" src="/mermaid-client.js"></script>
+</BaseLayout>
