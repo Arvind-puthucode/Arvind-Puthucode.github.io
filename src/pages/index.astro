@@ -3,14 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Home | Arvind Puthucode" pageClass="garden-theme">
-  <section class="personal-hero">
+  <section class="home-commandline meta">subject_record:// arvind_puthucode // clearance: founder</section>
+
+  <section class="personal-hero wild">
     <div class="card hero-identity">
       <p class="status-chip">Profile: Active</p>
-      <h1>Arvind Puthucode</h1>
+      <h1>The Human Signal Engine</h1>
       <p class="subtitle">Engineer turned founder. Builder of decision intelligence systems.</p>
       <p>
-        I care about how humans detect weak signals in complex systems. This site is where I
-        publish notes, experiments, and the ideas shaping what I build.
+        I build systems for finding the right signals when decisions are noisy.
+        I write in public, test strange ideas, and turn experiments into products.
       </p>
       <div class="hero-actions">
         <a href="/about" class="hero-btn primary">Read About</a>
@@ -18,15 +20,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </div>
 
-    <div class="card hero-visual">
-      <div class="signal-panel signal-a"></div>
-      <div class="signal-panel signal-b"></div>
-      <div class="signal-panel signal-c"></div>
-      <p class="meta">signal-map://human + systems + decisions</p>
+    <div class="card telemetry-panel">
+      <h3>Signal Map</h3>
+      <div class="telemetry-bars">
+        <div class="signal-panel signal-a"></div>
+        <div class="signal-panel signal-b"></div>
+        <div class="signal-panel signal-c"></div>
+      </div>
+      <p class="meta">human + systems + decisions // dataflow live</p>
     </div>
   </section>
 
-  <section class="card">
+  <section class="card now-panel">
     <h2>Now</h2>
     <ul>
       <li>Building ScoutFox in the TinyFish accelerator</li>
@@ -37,50 +42,115 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section>
     <div class="section-title-row">
-      <h2>Featured Videos</h2>
-      <a class="inline-link" href="https://www.youtube.com/@arvindputhucode" target="_blank" rel="noopener noreferrer">Channel</a>
+      <h2>Fun Experiments</h2>
+      <a href="/about" class="inline-link">More context</a>
     </div>
-    <div class="video-grid">
-      <article class="card video-card wide">
-        <h3>Generating Functions (Public)</h3>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/0PwH7CnPt0c"
-            title="Generating Functions"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
+    <div class="tracker-grid">
+      <article class="card tracker-card">
+        <p class="meta">01</p>
+        <h3>Socratic EdTech Prototype</h3>
+        <p>Early attempt at guided learning loops. Learned how hard behavior-change products are.</p>
       </article>
-
-      <article class="card video-card">
-        <h3>ScoutFox Demo</h3>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/T7LilWzKO8o"
-            title="ScoutFox Demo"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <p class="meta">If embed is restricted, open directly:</p>
-        <p><a class="inline-link" href="https://youtu.be/T7LilWzKO8o" target="_blank" rel="noopener noreferrer">youtu.be/T7LilWzKO8o</a></p>
+      <article class="card tracker-card">
+        <p class="meta">02</p>
+        <h3>SignalNotNoise</h3>
+        <p>Influencer marketing signal experiments that led to the ScoutFox thesis.</p>
       </article>
-
-      <article class="card video-card">
-        <h3>IntersecTX Hackathon Project</h3>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/WZ5jvBFEOSM"
-            title="IntersecTX Project"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
+      <article class="card tracker-card">
+        <p class="meta">03</p>
+        <h3>IntersecTX</h3>
+        <p>Team hackathon build that shipped fast and won.</p>
       </article>
     </div>
   </section>
+
+  <section>
+    <div class="section-title-row">
+      <h2>Featured Videos</h2>
+      <a class="inline-link" href="https://www.youtube.com/@arvindputhucode" target="_blank" rel="noopener noreferrer">Channel</a>
+    </div>
+    <article class="card video-slider" data-video-slider>
+      <div class="video-slider-head">
+        <h3 data-video-title>Generating Functions (Public)</h3>
+        <div class="video-controls">
+          <button type="button" class="hero-btn" data-video-prev>Prev</button>
+          <button type="button" class="hero-btn primary" data-video-next>Next</button>
+        </div>
+      </div>
+      <div class="video-frame">
+        <iframe
+          data-video-iframe
+          src="https://www.youtube.com/embed/0PwH7CnPt0c"
+          title="Generating Functions"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="meta" data-video-note>
+        Public video from my channel.
+      </p>
+      <p>
+        <a class="inline-link" data-video-link href="https://youtu.be/0PwH7CnPt0c?si=omYuHtAGLeDyaaAN" target="_blank" rel="noopener noreferrer">
+          Open on YouTube
+        </a>
+      </p>
+    </article>
+  </section>
+  <script>
+    const videos = [
+      {
+        title: "Generating Functions (Public)",
+        embed: "https://www.youtube.com/embed/0PwH7CnPt0c",
+        link: "https://youtu.be/0PwH7CnPt0c?si=omYuHtAGLeDyaaAN",
+        note: "Public video from my channel.",
+      },
+      {
+        title: "ScoutFox Demo",
+        embed: "https://www.youtube.com/embed/T7LilWzKO8o",
+        link: "https://youtu.be/T7LilWzKO8o",
+        note: "If embedding is restricted, open directly on YouTube.",
+      },
+      {
+        title: "IntersecTX Hackathon Project",
+        embed: "https://www.youtube.com/embed/WZ5jvBFEOSM",
+        link: "https://youtu.be/WZ5jvBFEOSM?si=Mu-BgW3reZjUJtsu",
+        note: "Hackathon team project demo.",
+      },
+    ];
+
+    const root = document.querySelector("[data-video-slider]");
+    if (root) {
+      let idx = 0;
+      const title = root.querySelector("[data-video-title]");
+      const iframe = root.querySelector("[data-video-iframe]");
+      const note = root.querySelector("[data-video-note]");
+      const link = root.querySelector("[data-video-link]");
+      const prev = root.querySelector("[data-video-prev]");
+      const next = root.querySelector("[data-video-next]");
+
+      const render = () => {
+        const video = videos[idx];
+        if (title) title.textContent = video.title;
+        if (iframe) {
+          iframe.src = video.embed;
+          iframe.title = video.title;
+        }
+        if (note) note.textContent = video.note;
+        if (link) link.href = video.link;
+      };
+
+      prev?.addEventListener("click", () => {
+        idx = (idx - 1 + videos.length) % videos.length;
+        render();
+      });
+
+      next?.addEventListener("click", () => {
+        idx = (idx + 1) % videos.length;
+        render();
+      });
+
+      render();
+    }
+  </script>
 </BaseLayout>
