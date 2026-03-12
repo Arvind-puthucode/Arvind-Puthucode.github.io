@@ -2,53 +2,85 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home | ScoutFox" pageClass="garden-theme">
-  <h1>ScoutFox</h1>
-  <p class="subtitle">Intelligent monitoring for the signals that matter.</p>
+<BaseLayout title="Home | Arvind Puthucode" pageClass="garden-theme">
+  <section class="personal-hero">
+    <div class="card hero-identity">
+      <p class="status-chip">Profile: Active</p>
+      <h1>Arvind Puthucode</h1>
+      <p class="subtitle">Engineer turned founder. Builder of decision intelligence systems.</p>
+      <p>
+        I care about how humans detect weak signals in complex systems. This site is where I
+        publish notes, experiments, and the ideas shaping what I build.
+      </p>
+      <div class="hero-actions">
+        <a href="/about" class="hero-btn primary">Read About</a>
+        <a href="/notes" class="hero-btn">Enter Notes Garden</a>
+      </div>
+    </div>
 
-  <section class="card">
-    <p>
-      The web constantly produces signals that influence decisions: new
-      technologies, market shifts, regulatory changes, and research
-      breakthroughs.
-    </p>
-    <p>
-      Most of these signals appear quietly across scattered sources and are
-      easy to miss.
-    </p>
-    <p>
-      ScoutFox monitors the web contextually and surfaces the signals that
-      matter before they become obvious.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>Momentum</h2>
-    <p>Built during the Lossfunk residency (Jan-Feb 2026).</p>
-    <p>Winner of the OSS4AI February Hackathon.</p>
-    <p>Currently developed in the TinyFish accelerator program.</p>
+    <div class="card hero-visual">
+      <div class="signal-panel signal-a"></div>
+      <div class="signal-panel signal-b"></div>
+      <div class="signal-panel signal-c"></div>
+      <p class="meta">signal-map://human + systems + decisions</p>
+    </div>
   </section>
 
   <section class="card">
     <h2>Now</h2>
     <ul>
       <li>Building ScoutFox in the TinyFish accelerator</li>
-      <li>Exploring intelligent web monitoring systems</li>
       <li>Researching signal detection and decision intelligence</li>
+      <li>Writing and iterating in public through notes</li>
     </ul>
   </section>
 
-  <section class="card">
-    <h2>Projects</h2>
-    <p><strong>ScoutFox</strong> - Intelligent web monitoring system</p>
-    <p>Lossfunk Residency Project (2026)</p>
-  </section>
-
   <section>
-    <h2>Founder Thesis</h2>
-    <p>
-      I'm building systems that surface the signals humans need to make better
-      decisions.
-    </p>
+    <div class="section-title-row">
+      <h2>Featured Videos</h2>
+      <a class="inline-link" href="https://www.youtube.com/@arvindputhucode" target="_blank" rel="noopener noreferrer">Channel</a>
+    </div>
+    <div class="video-grid">
+      <article class="card video-card wide">
+        <h3>Generating Functions (Public)</h3>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/0PwH7CnPt0c"
+            title="Generating Functions"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="card video-card">
+        <h3>ScoutFox Demo</h3>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/T7LilWzKO8o"
+            title="ScoutFox Demo"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="meta">If embed is restricted, open directly:</p>
+        <p><a class="inline-link" href="https://youtu.be/T7LilWzKO8o" target="_blank" rel="noopener noreferrer">youtu.be/T7LilWzKO8o</a></p>
+      </article>
+
+      <article class="card video-card">
+        <h3>IntersecTX Hackathon Project</h3>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/WZ5jvBFEOSM"
+            title="IntersecTX Project"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </article>
+    </div>
   </section>
 </BaseLayout>
