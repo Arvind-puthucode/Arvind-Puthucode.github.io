@@ -118,6 +118,26 @@ section {
   border-color: #dfd5c8;
 }
 
+.garden-intro {
+  background:
+    radial-gradient(420px 180px at 100% 0%, #eef8f3 0%, transparent 70%),
+    radial-gradient(380px 150px at 0% 100%, #fff3e2 0%, transparent 72%),
+    var(--card);
+}
+
+.garden-entry h2,
+.note-card h2 {
+  margin-top: 8px;
+}
+
+.note-card .note-linkline {
+  margin-bottom: 0;
+}
+
+.note-detail {
+  border-color: #ddd1c3;
+}
+
 .meta {
   color: var(--muted);
   font-size: 14px;

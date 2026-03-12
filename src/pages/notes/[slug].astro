@@ -79,8 +79,16 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 <BaseLayout title={`${title} | Notes`}>
   <h1>{title}</h1>
   <p class="meta">{dateFormatter.format(new Date(entry.date))}</p>
-  <section class="card">
+  <p class="subtitle">
+    A living note from the garden. Expect edits, expansions, and future links.
+  </p>
+  <section class="card note-detail">
     <div class="markdown" set:html={html} />
+  </section>
+  <section>
+    <p>
+      <a class="inline-link" href="/notes">← Back to all notes</a>
+    </p>
   </section>
   <script type="module" src="/mermaid-client.js"></script>
 </BaseLayout>

@@ -14,9 +14,21 @@ const rendered = await Promise.all(
 );
 ---
 
-<BaseLayout title="1% Delta | Personal Archive">
-  <h1>1% Delta (Daily / Frequent Writing)</h1>
-  <p class="meta">Reverse chronological</p>
+<BaseLayout title="1% Delta | Garden">
+  <h1>1% Delta</h1>
+  <p class="subtitle">Daily and frequent entries from an evolving thinking practice.</p>
+
+  <section class="garden-intro card">
+    <p class="meta">Garden Log</p>
+    <p>
+      This is the running edge of the garden. Small entries, quick iterations,
+      and unfinished models are collected here in reverse chronological order.
+    </p>
+    <p>
+      The goal is not polish. The goal is to capture movement while ideas are
+      still changing.
+    </p>
+  </section>
 
   <section class="list">
     {rendered.length === 0 ? (
@@ -25,7 +37,8 @@ const rendered = await Promise.all(
       </article>
     ) : (
       rendered.map(({ entry, Content }) => (
-        <article class="card">
+        <article class="card garden-entry">
+          <p class="meta">{entry.data.date.toISOString().slice(0, 10)}</p>
           <h2>{entry.data.title}</h2>
           <Content />
         </article>

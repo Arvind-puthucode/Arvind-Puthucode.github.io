@@ -13,19 +13,31 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 });
 ---
 
-<BaseLayout title="Notes | Personal Archive">
-  <h1>Notes (Fragments)</h1>
-  <p class="meta">Messy. Incomplete. Allowed to be wrong.</p>
+<BaseLayout title="Notes | Garden">
+  <h1>Notes</h1>
+  <p class="subtitle">Fragments, sketches, and questions worth revisiting.</p>
+
+  <section class="garden-intro card">
+    <p class="meta">Knowledge Garden</p>
+    <p>
+      These notes are seeds, not finished essays. Some are sparse, some are
+      contradictory, and many are waiting for a future connection.
+    </p>
+    <p>Follow what feels interesting. Return later. Watch ideas compound.</p>
+  </section>
 
   <section class="list">
     {entries.map((entry) => (
-      <article class="card">
+      <article class="card note-card">
         <p class="meta">{dateFormatter.format(new Date(entry.date))}</p>
         <h2>
           <a class="inline-link" href={`/notes/${entry.slug}`}>
             {entry.title}
           </a>
         </h2>
+        <p class="note-linkline">
+          <a class="inline-link" href={`/notes/${entry.slug}`}>Enter note</a>
+        </p>
       </article>
     ))}
   </section>
