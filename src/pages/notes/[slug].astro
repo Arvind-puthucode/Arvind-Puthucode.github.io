@@ -76,7 +76,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 });
 ---
 
-<BaseLayout title={`${title} | Notes`}>
+<BaseLayout title={`${title} | Notes`} pageClass="garden-theme">
   <h1>{title}</h1>
   <p class="meta">{dateFormatter.format(new Date(entry.date))}</p>
   <p class="subtitle">

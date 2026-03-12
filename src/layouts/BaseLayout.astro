@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-const { title } = Astro.props;
+const { title, pageClass = "" } = Astro.props;
 const path = Astro.url.pathname;
 const navItems = [
   { href: "/", label: "Home" },
@@ -16,7 +16,7 @@ const navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class={pageClass}>
     <main>
       <header>
         <p class="site-title">Arvind Puthucode</p>

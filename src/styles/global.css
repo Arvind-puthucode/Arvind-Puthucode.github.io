@@ -138,6 +138,145 @@ section {
   border-color: #ddd1c3;
 }
 
+body.garden-theme {
+  --bg: #05070a;
+  --ink: #d7dfce;
+  --muted: #7a8474;
+  --accent: #a1ff00;
+  --accent-2: #ff9100;
+  --card: rgba(10, 12, 16, 0.9);
+  --border: #1c2a11;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(161, 255, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(161, 255, 0, 0.035) 1px, transparent 1px),
+    radial-gradient(1200px 500px at 10% -10%, rgba(161, 255, 0, 0.1) 0%, transparent 55%),
+    #05070a;
+  background-size: 30px 30px, 30px 30px, auto;
+}
+
+body.garden-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    rgba(161, 255, 0, 0) 0%,
+    rgba(161, 255, 0, 0.05) 45%,
+    rgba(161, 255, 0, 0) 100%
+  );
+  height: 80px;
+  width: 100%;
+  animation: scanline 9s linear infinite;
+  z-index: 1;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-120px);
+  }
+  100% {
+    transform: translateY(calc(100vh + 120px));
+  }
+}
+
+body.garden-theme main,
+body.garden-theme header,
+body.garden-theme section,
+body.garden-theme article {
+  position: relative;
+  z-index: 2;
+}
+
+body.garden-theme .site-title {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+body.garden-theme nav a {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #8f9f7f;
+  text-transform: uppercase;
+}
+
+body.garden-theme nav a.active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+body.garden-theme h1,
+body.garden-theme h2,
+body.garden-theme h3 {
+  font-family: "Manrope", system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+body.garden-theme .subtitle {
+  color: #92a081;
+}
+
+body.garden-theme .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+body.garden-theme .card:hover {
+  border-color: #2e4d12;
+  box-shadow: 0 0 0 1px rgba(161, 255, 0, 0.12);
+}
+
+body.garden-theme .garden-intro {
+  background:
+    linear-gradient(to right, rgba(161, 255, 0, 0.09), rgba(161, 255, 0, 0) 32%),
+    rgba(10, 12, 16, 0.92);
+  border-left: 3px solid var(--accent);
+}
+
+body.garden-theme .meta {
+  color: #84a95f;
+}
+
+body.garden-theme .inline-link {
+  color: var(--accent);
+}
+
+body.garden-theme .inline-link:hover,
+body.garden-theme .inline-link:focus {
+  color: #d5ff7f;
+}
+
+body.garden-theme .garden-entry .meta,
+body.garden-theme .note-card .meta {
+  font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+body.garden-theme .note-detail {
+  border-color: #294019;
+  background: rgba(10, 12, 16, 0.95);
+}
+
+body.garden-theme .markdown table {
+  background: rgba(7, 9, 12, 0.95);
+}
+
+body.garden-theme .markdown th {
+  background: #131a13;
+}
+
+body.garden-theme .markdown pre {
+  background: #0c1113;
+}
+
 .meta {
   color: var(--muted);
   font-size: 14px;
