@@ -5,43 +5,93 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="Home | Arvind Puthucode" pageClass="garden-theme">
   <section class="personal-hero wild">
     <div class="card hero-identity">
-      <p class="status-chip">Profile: Active</p>
-      <h1>The Human Signal Engine</h1>
+      <p class="status-chip">Builder profile</p>
+      <h1>I build useful AI products from messy ideas.</h1>
       <p class="subtitle">
-        Engineer turned founder, hoping intelligent systems make me more
-        intelligent, then looping that process forever.
+        Product-minded engineer and founder, currently building ScoutFox as
+        proof that I can take an unclear problem and turn it into something real
+        people use.
       </p>
       <p>
-        I build systems for finding the right signals when decisions are noisy.
-        I write in public, test strange ideas, and turn experiments into products.
+        I like the full loop: understand the user, build the system, ship it,
+        hear where it breaks, and make it sharper.
       </p>
       <div class="hero-actions">
-        <a href="/about" class="hero-btn primary">Read About</a>
-        <a href="/notes" class="hero-btn">Enter Notes Garden</a>
+        <a href="/files/arv-resume.pdf" class="hero-btn primary" target="_blank" rel="noopener noreferrer">View Resume</a>
+        <a href="https://scoutfox.in/" class="hero-btn" target="_blank" rel="noopener noreferrer">ScoutFox</a>
+        <a href="/notes" class="hero-btn">Notes</a>
       </div>
     </div>
 
     <div class="card telemetry-panel">
-      <h3>Signal Map</h3>
+      <h3>Current Proof of Work</h3>
       <div class="portrait-frame">
         <img src="/my-ghibli.png" alt="Portrait of Arvind Puthucode" />
       </div>
-      <p class="meta">Arvind Puthucode • Engineer - curious enough to ask dumb questions</p>
+      <p class="meta">Arvind Puthucode • ScoutFox founder • AI product builder</p>
     </div>
+  </section>
+
+  <section class="role-strip">
+    <article class="card role-card">
+      <p class="meta">Operating style</p>
+      <h3>Founder-level ownership</h3>
+      <p>Comfortable owning unclear problems, customer calls, product taste, backend code, and messy iteration.</p>
+    </article>
+    <article class="card role-card">
+      <p class="meta">Flagship build</p>
+      <h3>ScoutFox</h3>
+      <p>A product that watches public sources and tells users when something important changed before it becomes obvious.</p>
+    </article>
   </section>
 
   <section class="card now-panel">
     <h2>Now</h2>
     <ul>
-      <li>Building ScoutFox in the TinyFish accelerator</li>
-      <li>Researching signal detection and decision intelligence</li>
-      <li>Writing and iterating in public through notes</li>
+      <li>Building ScoutFox, a product that catches important web changes early</li>
+      <li>Working with users across journalism, venture, research, and competitive intelligence</li>
+      <li>Writing, demoing, and iterating in public around how people notice what matters</li>
     </ul>
+  </section>
+
+  <section class="case-study card">
+    <div class="section-title-row">
+      <div>
+        <p class="meta">Flagship case study</p>
+        <h2>ScoutFox: know before it is news</h2>
+      </div>
+      <a class="inline-link" href="https://scoutfox.in/" target="_blank" rel="noopener noreferrer">scoutfox.in</a>
+    </div>
+    <p>
+      ScoutFox monitors primary web sources, learns what normal looks like for
+      a user's universe, and surfaces only the state changes that are worth
+      acting on. The product is built for people who need early signal:
+      journalists, analysts, investors, and competitive intelligence teams.
+    </p>
+    <div class="proof-grid">
+      <div>
+        <p class="meta">Used by</p>
+        <strong>Business Today, Analytics India Magazine, and early-stage VC users</strong>
+      </div>
+      <div>
+        <p class="meta">Built through</p>
+        <strong>TinyFish accelerator; started during Lossfunk Jan-Feb 2026</strong>
+      </div>
+      <div>
+        <p class="meta">Why it matters</p>
+        <strong>It turns scattered public changes into early leads people can actually use</strong>
+      </div>
+    </div>
+    <p>
+      What this says about me: I can turn a vague market pain into a running
+      product, talk to real users, ship across the stack, and keep tightening
+      the system when the signal quality is not good enough.
+    </p>
   </section>
 
   <section>
     <div class="section-title-row">
-      <h2>Fun Experiments</h2>
+      <h2>Earlier Experiments</h2>
       <a href="/about" class="inline-link">More context</a>
     </div>
     <div class="tracker-grid">
@@ -53,7 +103,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <article class="card tracker-card">
         <p class="meta">02</p>
         <h3>SignalNotNoise</h3>
-        <p>Influencer marketing signal experiments that led to the ScoutFox thesis.</p>
+        <p>Influencer marketing signal experiments that led to ScoutFox's sharper signal-detection thesis.</p>
       </article>
       <article class="card tracker-card">
         <p class="meta">03</p>
@@ -99,16 +149,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <script>
     const videos = [
       {
-        title: "Generating Functions (Public)",
-        embed: "https://www.youtube.com/embed/0PwH7CnPt0c",
-        link: "https://youtu.be/0PwH7CnPt0c?si=omYuHtAGLeDyaaAN",
-        note: "Public video from my channel.",
+        title: "ScoutFox Product Walkthrough",
+        embed: "https://www.youtube.com/embed/E413znHNq4E",
+        link: "https://www.youtube.com/watch?v=E413znHNq4E",
+        note: "Latest public ScoutFox walkthrough.",
       },
       {
         title: "ScoutFox Demo",
         embed: "https://www.youtube.com/embed/T7LilWzKO8o",
         link: "https://youtu.be/T7LilWzKO8o",
         note: "If embedding is restricted, open directly on YouTube.",
+      },
+      {
+        title: "Generating Functions (Public)",
+        embed: "https://www.youtube.com/embed/0PwH7CnPt0c",
+        link: "https://youtu.be/0PwH7CnPt0c?si=omYuHtAGLeDyaaAN",
+        note: "Public video from my channel.",
       },
       {
         title: "IntersecTX Hackathon Project",

@@ -88,11 +88,13 @@ h3 {
 h1 {
   font-size: 40px;
   letter-spacing: 0.02em;
+  text-wrap: balance;
 }
 
 h2 {
   font-size: 28px;
   letter-spacing: 0.02em;
+  text-wrap: balance;
 }
 
 .card h2 {
@@ -409,6 +411,9 @@ body.garden-theme .hero-actions {
 }
 
 body.garden-theme .hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   border: 1px solid #395b1d;
   padding: 10px 14px;
@@ -429,11 +434,53 @@ body.garden-theme .now-panel ul {
   margin-bottom: 2px;
 }
 
+body.garden-theme .role-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.garden-theme .role-card {
+  margin-top: 0;
+}
+
 body.garden-theme .section-title-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
+}
+
+body.garden-theme .case-study {
+  border-left: 3px solid var(--accent);
+}
+
+body.garden-theme .case-study h2,
+body.garden-theme .case-study h3 {
+  margin-top: 0;
+}
+
+body.garden-theme .proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+body.garden-theme .proof-grid > div {
+  min-height: 128px;
+  padding: 14px;
+  border: 1px solid #294019;
+  border-radius: 4px;
+  background:
+    linear-gradient(135deg, rgba(161, 255, 0, 0.07), rgba(255, 145, 0, 0.03)),
+    rgba(7, 10, 11, 0.72);
+}
+
+body.garden-theme .proof-grid strong {
+  display: block;
+  color: #dce8cf;
+  line-height: 1.45;
 }
 
 body.garden-theme .tracker-grid {
@@ -636,7 +683,8 @@ blockquote {
 
 @media (max-width: 640px) {
   h1 {
-    font-size: 32px;
+    font-size: 30px;
+    line-height: 1.18;
   }
 
   header {
@@ -645,6 +693,8 @@ blockquote {
   }
 
   body.garden-theme .personal-hero,
+  body.garden-theme .role-strip,
+  body.garden-theme .proof-grid,
   body.garden-theme .video-grid,
   body.garden-theme .tracker-grid {
     grid-template-columns: 1fr;
